@@ -1,0 +1,14 @@
+version: '3.5'
+
+services:
+  db:
+    image: postgres:9.6-alpine
+    container_name: postgres-devel
+    shm_size: 256MB
+    environment:
+      POSTGRES_PASSWORD: secret
+    volumes:
+      - ./db/pgdata:/var/lib/postgresql/data
+      - ./db/init.d:/docker-entrypoint-initdb.d
+    ports:
+      - 5432:5432
