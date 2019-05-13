@@ -3,6 +3,7 @@ version: '3.5'
 services:
   db:
     image: mariadb:5
+    # image: hypriot/rpi-mysql:5.5
     container_name: mysql-devel
     environment:
       MYSQL_ROOT_PASSWORD: secret
