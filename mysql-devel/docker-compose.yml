@@ -1,0 +1,13 @@
+version: '3.5'
+
+services:
+  db:
+    image: mariadb:5
+    container_name: mysql-devel
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+    volumes:
+      - ./db/mysql:/var/lib/mysql
+      - ./db/init.d:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306

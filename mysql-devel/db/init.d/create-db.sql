@@ -1,0 +1,11 @@
+USE mysql;
+CREATE USER 'demo'@'%' IDENTIFIED BY 'demo';
+CREATE DATABASE demo;
+USE demo;
+CREATE TABLE number (id int not null primary key, text varchar(40) not null);
+INSERT INTO number (id,text) VALUES(1,'One');
+INSERT INTO number (id,text) VALUES(2,'Two');
+INSERT INTO number (id,text) VALUES(3,'Three');
+USE mysql;
+GRANT ALL PRIVILEGES ON demo.* TO 'demo'@'%';
+FLUSH PRIVILEGES;
