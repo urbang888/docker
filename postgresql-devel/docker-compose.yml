@@ -12,3 +12,11 @@ services:
       - ./db/init.d:/docker-entrypoint-initdb.d
     ports:
       - 5432:5432
+  admin:
+    image: dpage/pgadmin4
+    container_name: pgAdmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: gabo@llarik.sk
+      PGADMIN_DEFAULT_PASSWORD: secret
+    ports:
+      - 5050:80
